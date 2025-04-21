@@ -1,0 +1,36 @@
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+}
+.hero-section {
+background-image: url('./hero.jpeg');
+background-size: cover;
+background-position: center;
+}
+input:focus, button:focus {
+outline: none;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(75, 188, 179, 0.1);
+}
+.whatsapp-button {
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.table-row:nth-child(even) {
+background-color: rgba(75, 188, 179, 0.05);
+}
+
+.botao-piscando {
+    animation: piscar 2s infinite;
+  }
+  
+  /* Animação de piscar */
+  @keyframes piscar {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }

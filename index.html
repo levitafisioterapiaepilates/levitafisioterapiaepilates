@@ -14,6 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="script.js">
 </head>
 
 <body class="bg-white">
@@ -23,16 +24,32 @@
 <a href="#" class="h-20">
 <img src="./logosemfundo.png" alt="Levita Logo" class="h-full">
 </a>
-<nav class="hidden md:flex space-x-8">
-<a href="#inicio" class="text-gray-700 hover:text-primary font-medium transition">Início</a>
-<a href="#sobre" class="text-gray-700 hover:text-primary font-medium transition">Sobre</a>
-<a href="#servicos" class="text-gray-700 hover:text-primary font-medium transition">Serviços</a>
-<a href="#localizacao" class="text-gray-700 hover:text-primary font-medium transition">Localização</a>
-<a href="#contato" class="text-gray-700 hover:text-primary font-medium transition">Contato</a>
+
+<!-- Menu Mobile (inicialmente oculto) -->
+<nav id="mobile-menu" class="hidden md:hidden flex flex-col gap-4 mt-4 bg-white p-4 rounded shadow">
+  <a href="#inicio" class="text-gray-700 hover:text-blue-500">Início</a>
+  <a href="#sobre" class="text-gray-700 hover:text-blue-500">Sobre</a>
+  <a href="#servicos" class="text-gray-700 hover:text-blue-500">Serviços</a>
+  <a href="#localizacao" class="text-gray-700 hover:text-blue-500">Localização</a>
+  <a href="#contato" class="text-gray-700 hover:text-blue-500">Contato</a>
 </nav>
-<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
-<i class="ri-menu-line ri-lg"></i>
-</button>
+
+<!-- Botão Hambúrguer (visível apenas em mobile) -->
+<div class="flex justify-between items-center">
+  <button id="menu-toggle" class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+    <i class="ri-menu-line ri-lg"></i>
+  </button>
+</div>
+
+<!-- Menu Desktop (sempre visível em telas grandes) -->
+<nav id="desktop-menu" class="hidden md:flex gap-6">
+  <a href="#inicio" class="text-gray-900 hover:text-blue-500">Início</a>
+  <a href="#sobre" class="text-gray-900 hover:text-blue-500">Sobre</a>
+  <a href="#servicos" class="text-gray-900 hover:text-blue-500">Serviços</a>
+  <a href="#localizacao" class="text-gray-900 hover:text-blue-500">Localização</a>
+  <a href="#contato" class="text-gray-900 hover:text-blue-500">Contato</a>
+</nav>
+
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20aula%20experimental." class="hidden md:inline-block bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap" target="_blank">Agende sua Aula Experimental</a>
 </div>
 </header>
@@ -68,7 +85,7 @@ class="w-full h-full object-cover object-top">
 </div>
 <div class="md:w-3/5">
 <h3 class="text-2xl font-semibold mb-4 text-gray-800">Maxwell Coelho Junior</h3>
-<p class="text-gray-700 mb-6 leading-relaxed">
+<p class="text-gray-900 mb-6 leading-relaxed">
 Sou Maxwell Coelho Junior, fisioterapeuta formado desde 2020 pela Universidade Vila Velha. Desde então, atuo em diversas áreas da fisioterapia sendo na traumato ortopedia, neurologista, respiratória e hospitalar, atendendo desde pacientes pediátricos até os idosos. Apaixonado por reabilitação através do movimento, encontrei no Pilates uma maneira de aliar a fisioterapia a uma qualidade de vida!
 </p>
 
@@ -79,7 +96,7 @@ Sou Maxwell Coelho Junior, fisioterapeuta formado desde 2020 pela Universidade V
 </div>
 <div>
 <h4 class="font-medium text-gray-800">Formação</h4>
-<p class="text-sm text-gray-600">Universidade Vila Velha, 2020</p>
+<p class="text-sm text-gray-900">Universidade Vila Velha, 2020</p>
 </div>
 </div>
 <div class="flex items-center">
@@ -88,7 +105,7 @@ Sou Maxwell Coelho Junior, fisioterapeuta formado desde 2020 pela Universidade V
 </div>
 <div>
 <h4 class="font-medium text-gray-800">Especialização</h4>
-<p class="text-sm text-gray-600">Pilates Clínico</p>
+<p class="text-sm text-gray-900">Pilates Clínico</p>
 </div>
 </div>
 <div class="flex items-center">
@@ -96,8 +113,8 @@ Sou Maxwell Coelho Junior, fisioterapeuta formado desde 2020 pela Universidade V
 <i class="ri-heart-pulse-line text-primary ri-lg"></i>
 </div>
 <div>
-<h4 class="font-medium text-gray-800">Experiência</h4>
-<p class="text-sm text-gray-600">+5 anos de atuação</p>
+<h4 class="font-medium text-gray-900">Experiência</h4>
+<p class="text-sm text-gray-900">+5 anos de atuação</p>
 </div>
 </div>
 </div>
@@ -111,7 +128,7 @@ Sou Maxwell Coelho Junior, fisioterapeuta formado desde 2020 pela Universidade V
 <div class="container mx-auto px-6">
 <div class="text-center mb-16">
 <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossos Serviços</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Oferecemos uma ampla gama de serviços terapêuticos e de condicionamento físico, personalizados para atender às suas necessidades específicas.</p>
+<p class="text-gray-900 max-w-2xl mx-auto">Oferecemos uma ampla gama de serviços terapêuticos e de condicionamento físico, personalizados para atender às suas necessidades específicas.</p>
 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -121,7 +138,7 @@ Sou Maxwell Coelho Junior, fisioterapeuta formado desde 2020 pela Universidade V
 <i class="ri-hand-heart-line text-primary ri-2x"></i>
 </div>
 <h3 class="text-xl font-semibold mb-3 text-gray-800">Terapia Manual</h3>
-<p class="text-gray-600 mb-4">Técnicas especializadas de manipulação para alívio da dor, melhora da mobilidade e recuperação de lesões.</p>
+<p class="text-gray-700 mb-4">Técnicas especializadas de manipulação para alívio da dor, melhora da mobilidade e recuperação de lesões.</p>
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20t%C3%A9cnica%20de%20terapia%20manual." class="text-primary font-medium flex items-center" target="_blank">
 Saiba mais
 <i class="ri-arrow-right-line ml-1"></i>
@@ -133,7 +150,7 @@ Saiba mais
 <i class="ri-psychotherapy-line text-primary ri-2x"></i>
 </div>
 <h3 class="text-xl font-semibold mb-3 text-gray-800">Ventosaterapia</h3>
-<p class="text-gray-600 mb-4">Tratamento que utiliza ventosas para melhorar a circulação, aliviar tensões musculares e promover relaxamento.</p>
+<p class="text-gray-700 mb-4">Tratamento que utiliza ventosas para melhorar a circulação, aliviar tensões musculares e promover relaxamento.</p>
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20t%C3%A9cnica%20de%20ventosaterapia." class="text-primary font-medium flex items-center" target="_blank">
 Saiba mais
 <i class="ri-arrow-right-line ml-1"></i>
@@ -145,7 +162,7 @@ Saiba mais
 <i class="ri-mental-health-line text-primary ri-2x"></i>
 </div>
 <h3 class="text-xl font-semibold mb-3 text-gray-800">Aurículo Acupuntura</h3>
-<p class="text-gray-600 mb-4">Técnica que estimula pontos específicos da orelha para tratar diversas condições e promover equilíbrio energético.</p>
+<p class="text-gray-700 mb-4">Técnica que estimula pontos específicos da orelha para tratar diversas condições e promover equilíbrio energético.</p>
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20t%C3%A9cnica%20de%20Aur%C3%ADculo%20Acupuntura." class="text-primary font-medium flex items-center" target="_blank">
 Saiba mais
 <i class="ri-arrow-right-line ml-1"></i>
@@ -157,7 +174,7 @@ Saiba mais
 <i class="ri-user-follow-line text-primary ri-2x"></i>
 </div>
 <h3 class="text-xl font-semibold mb-3 text-gray-800">Agulhamento Seco</h3>
-<p class="text-gray-600 mb-4">Tratamento que utiliza agulhas finas para aliviar pontos-gatilho musculares, reduzindo dor e melhorando a função.</p>
+<p class="text-gray-700 mb-4">Tratamento que utiliza agulhas finas para aliviar pontos-gatilho musculares, reduzindo dor e melhorando a função.</p>
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20t%C3%A9cnica%20de%20Agulhamento%20Seco." class="text-primary font-medium flex items-center" target="_blank">
 Saiba mais
 <i class="ri-arrow-right-line ml-1"></i>
@@ -169,7 +186,7 @@ Saiba mais
 <i class="ri-riding-line text-primary ri-2x"></i>
 </div>
 <h3 class="text-xl font-semibold mb-3 text-gray-800">Pilates</h3>
-<p class="text-gray-600 mb-4">Método de exercícios que fortalece o corpo, melhora a postura, flexibilidade e consciência corporal.</p>
+<p class="text-gray-700 mb-4">Método de exercícios que fortalece o corpo, melhora a postura, flexibilidade e consciência corporal.</p>
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Pilates." class="text-primary font-medium flex items-center" target="_blank">
 Saiba mais
 <i class="ri-arrow-right-line ml-1"></i>
@@ -181,7 +198,7 @@ Saiba mais
 <i class="ri-run-line text-primary ri-2x"></i>
 </div>
 <h3 class="text-xl font-semibold mb-3 text-gray-800">Treinamento Funcional</h3>
-<p class="text-gray-600 mb-4">Exercícios que simulam movimentos do dia a dia, melhorando força, equilíbrio e coordenação motora.</p>
+<p class="text-gray-700 mb-4">Exercícios que simulam movimentos do dia a dia, melhorando força, equilíbrio e coordenação motora.</p>
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Treinamento%20Funcional." class="text-primary font-medium flex items-center" target="_blank">
 Saiba mais
 <i class="ri-arrow-right-line ml-1"></i>
@@ -193,7 +210,7 @@ Saiba mais
 <i class="ri-heart-3-line text-primary ri-2x"></i>
 </div>
 <h3 class="text-xl font-semibold mb-3 text-gray-800">Pilates para Gestantes</h3>
-<p class="text-gray-600 mb-4">Exercícios adaptados para gestantes, fortalecendo músculos importantes para o parto e pós-parto.</p>
+<p class="text-gray-700 mb-4">Exercícios adaptados para gestantes, fortalecendo músculos importantes para o parto e pós-parto.</p>
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Pilates%20para%20Gestantes." class="text-primary font-medium flex items-center" target="_blank">
 Saiba mais
 <i class="ri-arrow-right-line ml-1"></i>
@@ -205,7 +222,7 @@ Saiba mais
 <i class="ri-heart-pulse-line text-primary ri-2x"></i>
 </div>
 <h3 class="text-xl font-semibold mb-3 text-gray-800">Reabilitação Pós-AVC</h3>
-<p class="text-gray-600 mb-4">Programa especializado para recuperação de movimentos e funções após Acidente Vascular Cerebral.</p>
+<p class="text-gray-700 mb-4">Programa especializado para recuperação de movimentos e funções após Acidente Vascular Cerebral.</p>
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20t%C3%A9cnica%20de%20Reabilita%C3%A7%C3%A3o%20P%C3%B3s-AVC."class="text-primary font-medium flex items-center" target="_blank">
 Saiba mais
 <i class="ri-arrow-right-line ml-1"></i>
@@ -217,7 +234,7 @@ Saiba mais
 <i class="ri-health-book-line text-primary ri-2x"></i>
 </div>
 <h3 class="text-xl font-semibold mb-3 text-gray-800">Outros Serviços</h3>
-<p class="text-gray-600 mb-4">Oferecemos diversos outros tratamentos personalizados para atender às suas necessidades específicas.</p>
+<p class="text-gray-700 mb-4">Oferecemos diversos outros tratamentos personalizados para atender às suas necessidades específicas.</p>
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20se%20voc%C3%AA%20realiza%20um%20determinado%20servi%C3%A7o." class="text-primary font-medium flex items-center" target="_blank">
 Saiba mais
 <i class="ri-arrow-right-line ml-1"></i>
@@ -234,7 +251,7 @@ Saiba mais
 <div class="container mx-auto px-6">
 <div class="text-center mb-16">
 <h2 class="text-3xl md:text-4xl font-bold mb-4">Localização e Horários</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Estamos localizados em um local de fácil acesso, com horários flexíveis para melhor atender você.</p>
+<p class="text-gray-900 max-w-2xl mx-auto">Estamos localizados em um local de fácil acesso, com horários flexíveis para melhor atender você.</p>
 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
 </div>
 <div class="flex flex-col lg:flex-row gap-10">
@@ -249,9 +266,9 @@ Saiba mais
 <i class="ri-map-pin-line text-primary ri-lg"></i>
 </div>
 <div>
-<p class="text-gray-700">Rua Alvin Soares Bermudes, 94</p>
-<p class="text-gray-700">Morada de Camburí - Vitória, ES</p>
-<p class="text-gray-700">CEP: 29062-515</p>
+<p class="text-gray-800">Rua Alvin Soares Bermudes, 94</p>
+<p class="text-gray-800">Morada de Camburí - Vitória, ES</p>
+<p class="text-gray-800">CEP: 29062-515</p>
 </div>
 </div>
 <div class="flex items-start">
@@ -259,8 +276,8 @@ Saiba mais
 <i class="ri-information-line text-primary ri-lg"></i>
 </div>
 <div>
-<p class="text-gray-700">Estacionamento no local</p>
-<p class="text-gray-700">Acesso para cadeirantes</p>
+<p class="text-gray-800">Estacionamento no local</p>
+<p class="text-gray-800">Acesso para cadeirantes</p>
 </div>
 </div>
 <a href="https://www.google.com/maps/place/Maxwell+Jr+Fisioterapia+e+Pilates/@-20.2713148,-40.2957194,17z/data=!3m1!4b1!4m6!3m5!1s0xb903f68e058a83:0xadae975f25b48d49!8m2!3d-20.2713148!4d-40.2957194!16s%2Fg%2F11mqlts_sc?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="inline-block bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition mt-6 whitespace-nowrap">
@@ -275,31 +292,31 @@ Como Chegar
 <div class="mb-8">
 <div class="table-row flex justify-between py-3 border-b">
 <span class="font-medium text-gray-700"></span>Segunda-feira: </span>
-<span class="text-gray-600">08:00 - 18:00</span>
+<span class="text-gray-800">08:00 - 18:00</span>
 </div>
 <div class="table-row flex justify-between py-3 border-b">
 <span class="font-medium text-gray-700">Terça-feira: </span>
-<span class="text-gray-600">08:00 - 18:00</span>
+<span class="text-gray-800">08:00 - 18:00</span>
 </div>
 <div class="table-row flex justify-between py-3 border-b">
 <span class="font-medium text-gray-700">Quarta-feira: </span>
-<span class="text-gray-600">08:00 - 18:00</span>
+<span class="text-gray-800">08:00 - 18:00</span>
 </div>
 <div class="table-row flex justify-between py-3 border-b">
 <span class="font-medium text-gray-700">Quinta-feira: </span>
-<span class="text-gray-600">08:00 - 18:00</span>
+<span class="text-gray-800">08:00 - 18:00</span>
 </div>
 <div class="table-row flex justify-between py-3 border-b">
 <span class="font-medium text-gray-700">Sexta-feira: </span>
-<span class="text-gray-600">08:00 - 12:00</span>
+<span class="text-gray-800">08:00 - 12:00</span>
 </div>
 <div class="table-row flex justify-between py-3 border-b">
 <span class="font-medium text-gray-700"></span>
-<span class="text-gray-600"></span>
+<span class="text-gray-800"></span>
 </div>
 <div class="table-row flex justify-between py-3">
 <span class="font-medium text-gray-700"></span>
-<span class="text-gray-600"></span>
+<span class="text-gray-800"></span>
 </div>
 </div>
 <h3 class="text-xl font-semibold mb-4 text-gray-800">Contato</h3>
@@ -314,7 +331,7 @@ Como Chegar
 <i class="ri-whatsapp-line text-primary ri-lg"></i>
 </div>
 <div>
-<p class="text-gray-700">(27) 99603-4984</p>
+<p class="text-gray-800">(27) 99603-4984</p>
 </div>
 </div>
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20aula%20experimental." target="_blank" id="agendar" class="inline-block bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Agende sua Aula Experimental</a>
@@ -362,22 +379,22 @@ Como Chegar
 <form action="https://formspree.io/f/xrbqzkdd"
 method="POST">
     <div class="mb-4">
-      <label for="nome" class="block text-gray-700 mb-2">Nome Completo</label>
+      <label for="nome" class="block text-gray-800 mb-2">Nome Completo</label>
       <input type="text" id="nome" name="nome" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
     </div>
   
     <div class="mb-4">
-      <label for="email" class="block text-gray-700 mb-2">E-mail</label>
+      <label for="email" class="block text-gray-800 mb-2">E-mail</label>
       <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
     </div>
   
     <div class="mb-4">
-      <label for="telefone" class="block text-gray-700 mb-2">Telefone / WhatsApp</label>
+      <label for="telefone" class="block text-gray-800 mb-2">Telefone / WhatsApp</label>
       <input type="tel" id="telefone" name="telefone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
     </div>
   
     <div class="mb-4">
-      <label for="servico" class="block text-gray-700 mb-2">Serviço de Interesse</label>
+      <label for="servico" class="block text-gray-800 mb-2">Serviço de Interesse</label>
       <div class="relative">
         <select id="servico" name="servico" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary appearance-none pr-8" required>
           <option value="">Selecione um serviço</option>
@@ -397,7 +414,7 @@ method="POST">
       </div>
     </div>
     <div class="mb-6">
-      <label for="mensagem" class="block text-gray-700 mb-2">Mensagem (opcional)</label>
+      <label for="mensagem" class="block text-gray-800 mb-2">Mensagem (opcional)</label>
       <textarea id="mensagem" name="mensagem" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"></textarea>
     </div>
     <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">
@@ -463,6 +480,18 @@ method="POST">
 <a href="https://wa.me/5527996034984?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20aula%20experimental." target="_blank" class="whatsapp-button fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white z-50 hover:bg-green-600 transition-all botao-piscando">
 <i class="ri-whatsapp-line ri-2x"></i>
 </a>
+
+<script>  
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggleBtn.addEventListener("click", function () {
+      // Alterna a visibilidade do menu mobile
+      mobileMenu.classList.toggle("hidden");
+    });
+  });
+</script>
 
 </body>
 </html>
